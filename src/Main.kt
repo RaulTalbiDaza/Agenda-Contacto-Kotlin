@@ -3,7 +3,7 @@ fun main(){
 
     var salir : Boolean = false
     while(!salir){
-        println("===== AGENDA DE CONTACTOS =====")
+        println("\n===== AGENDA DE CONTACTOS =====")
         println("1. Añadir contacto")
         println("2. Listar contactos")
         println("3. Buscar contacto")
@@ -14,8 +14,7 @@ fun main(){
 
         when (opcion) {
             "1" -> añadirContacto(agenda)
-            "2" ->
-                println("2")
+            "2" -> listarContactos(agenda)
             "3" ->
                 println("3")
             "4" ->

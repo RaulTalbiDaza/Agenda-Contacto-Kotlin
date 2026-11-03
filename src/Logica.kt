@@ -42,3 +42,19 @@ fun añadirContacto(agenda: MutableList<Contacto>) {
 
 
 }
+
+fun listarContactos(agenda: MutableList<Contacto>) {
+
+    // Primero compruebo si la agenda está vacía
+
+    if (agenda.isEmpty()){
+        println("La agenda esta vacía \n")
+    }else{
+
+        // Aquí recorro la lista añadiéndole un índice para poder mostrar dicho índice
+
+        for ((indice, contacto) in agenda.withIndex()){
+            print("${indice + 1}. ${contacto.nombre} - ${contacto.telefono} - ${contacto.email} \n")
+        }
+    }
+}
