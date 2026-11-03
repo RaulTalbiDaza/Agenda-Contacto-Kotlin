@@ -49,7 +49,6 @@ fun listarContactos(agenda: MutableList<Contacto>) {
 
     if (agenda.isEmpty()){
         println("La agenda esta vacía \n")
-        return
     }else{
 
         // Aquí recorro la lista añadiéndole un índice para poder mostrar dicho índice
@@ -64,13 +63,40 @@ fun buscarContacto(agenda : MutableList<Contacto>){
     if (agenda.isEmpty()){
         println("La agenda está vacía \n")
     }else{
+
+        // Buscamos el contacto por nombre
+
         println("Introduce el nombre a buscar: ")
         val nombre : String = readln()
+
+        // Creo una nueva lista filtrada por el nombre intorducido e ignoro las mayúsculas
 
         val listaFiltrada = agenda.filter{ it.nombre.contains(nombre, ignoreCase = true) }
 
         for ((indice, contacto) in listaFiltrada.withIndex()){
             print("${indice + 1}. ${contacto.nombre} - ${contacto.telefono} - ${contacto.email} \n")
+        }
+    }
+}
+
+fun eliminarContacto(agenda : MutableList<Contacto>){
+    if (agenda.isEmpty()){
+        println("La agenda está vacía \n")
+    }else{
+
+        // Aquí busco el contacto a eliminar por el número que se le asigna como índice en la propia lista
+
+        println("Introduce el número que ocupa el contacto en la lista: ")
+        val num = readln().toIntOrNull()
+        if (num != null && num in 1..agenda.size){
+            println("Borrando contacto...")
+
+            // Aquí es num - 1 porque el usuario ve del 1 para adelante, pero los índices de las listas empiezan en 0
+
+            agenda.removeAt(num - 1)
+            println("Contacto borrado correctamente.")
+        }else{
+            println("Número incorrecto.")
         }
     }
 }

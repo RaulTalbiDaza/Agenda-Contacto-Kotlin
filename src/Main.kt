@@ -16,8 +16,7 @@ fun main(){
             "1" -> añadirContacto(agenda)
             "2" -> listarContactos(agenda)
             "3" -> buscarContacto(agenda)
-            "4" ->
-                println("4")
+            "4" -> eliminarContacto(agenda)
             "5" ->{
                 println("Saliendo...")
                 salir = true
