@@ -49,11 +49,27 @@ fun listarContactos(agenda: MutableList<Contacto>) {
 
     if (agenda.isEmpty()){
         println("La agenda esta vacía \n")
+        return
     }else{
 
         // Aquí recorro la lista añadiéndole un índice para poder mostrar dicho índice
 
         for ((indice, contacto) in agenda.withIndex()){
+            print("${indice + 1}. ${contacto.nombre} - ${contacto.telefono} - ${contacto.email} \n")
+        }
+    }
+}
+
+fun buscarContacto(agenda : MutableList<Contacto>){
+    if (agenda.isEmpty()){
+        println("La agenda está vacía \n")
+    }else{
+        println("Introduce el nombre a buscar: ")
+        val nombre : String = readln()
+
+        val listaFiltrada = agenda.filter{ it.nombre.contains(nombre, ignoreCase = true) }
+
+        for ((indice, contacto) in listaFiltrada.withIndex()){
             print("${indice + 1}. ${contacto.nombre} - ${contacto.telefono} - ${contacto.email} \n")
         }
     }

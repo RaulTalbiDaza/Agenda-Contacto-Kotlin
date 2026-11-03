@@ -15,8 +15,7 @@ fun main(){
         when (opcion) {
             "1" -> añadirContacto(agenda)
             "2" -> listarContactos(agenda)
-            "3" ->
-                println("3")
+            "3" -> buscarContacto(agenda)
             "4" ->
                 println("4")
             "5" ->{
