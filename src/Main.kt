@@ -13,8 +13,7 @@ fun main(){
         var opcion : String = readln()
 
         when (opcion) {
-            "1" ->
-                println("1")
+            "1" -> añadirContacto(agenda)
             "2" ->
                 println("2")
             "3" ->
@@ -26,7 +25,6 @@ fun main(){
                 salir = true
             }
             else -> println("Opcion incorrecta")
-
         }
     }
 }
